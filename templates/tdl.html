@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+
+    <h1>TO DO LIST</h1>
+
+    <form method="POST" action="/add">
+
+        <label id="newtsk">Enter a new task: </label>
+        <input name="newtsk" for="newtsk" type="text">
+        <br>
+        <button type="submit">Add</button>
+
+    </form>
+
+    <ul>
+    {% for newtask in tasks %}
+        <li><h3>{{ newtask }}</h3></li>
+        <a href="/delete/{{ loop.index0 }}">Delete</a>
+    {% endfor %}
+    </ul>
+
+
+</body>
+</html>
